@@ -35,7 +35,7 @@ public class QuoteApp {
         quoteLabel.setHorizontalAlignment(SwingConstants.CENTER);
         quoteLabel.setPreferredSize(new Dimension(480, 100));
         quoteLabel.setOpaque(false);
-        quoteLabel.setText("<html><div style='text-align: center;'></div></html>");  // allow multiline & center
+        quoteLabel.setText("<html><div style='text-align: center;'></div></html>"); 
 
         authorLabel = new JLabel("", SwingConstants.CENTER);
         authorLabel.setFont(new Font("Helvetica", Font.ITALIC, 12));
@@ -64,13 +64,12 @@ public class QuoteApp {
 
         showRandomQuote();
 
-        frame.setLocationRelativeTo(null);  // center window
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
     private void showRandomQuote() {
         Quote q = quotes[random.nextInt(quotes.length)];
-        // Wrap text for multiline and center
         String htmlText = "<html><div style='text-align: center;'>" + q.text + "</div></html>";
         quoteLabel.setText(htmlText);
         authorLabel.setText("- " + q.author);
